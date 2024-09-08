@@ -1,2 +1,3 @@
-# simple-website
-Simple blog style website developed with only CSS.
+# Simple Website
+
+This is a simple blog style website developed with HTML & CSS.
