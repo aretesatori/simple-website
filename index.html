@@ -37,19 +37,29 @@
         .container {
             display: flex;
             flex-direction: row;
+
+            -ms-box-orient: horizontal;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -moz-flex;
+            display: -webkit-flex;
+
+            -webkit-justify-content: space-around;
+            justify-content: space-around;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row nowrap;
+            -webkit-align-items: stretch;
+            align-items: stretch;
         }
 
         .main-column {
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* padding: 0 30px; */
-            /* flex-grow: 2; */
-            /* Ocupa el doble que las barras laterales */
-        }
 
-        section {
-            margin: 30px 0;
+            flex: 2;
+            /* padding: 0 30px; */
         }
 
         .section-box {
@@ -57,7 +67,8 @@
             padding: 20px 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
+            margin: 30px 0 0 0;
+            /* width: 100%; */
         }
 
         .title {
@@ -76,20 +87,17 @@
             align-items: center;
 
             padding: 0 30px;
-            /* flex-grow: 1; */
-            /* Las barras laterales ocupan el mismo espacio */
+            /* width: 100%; */
+            flex: 1;
         }
 
-        .container:nth-of-type(1) {
-            flex-grow: 1;
-        }
-
-        .container:nth-of-type(2) {
-            flex-grow: 2;
-        }
-
-        .container:nth-of-type(3) {
-            flex-grow: 1;
+        footer {
+            background-color: #11354c;
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0px;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -100,78 +108,72 @@
     </header>
     <div class="container">
         <div class="left-sidebar flex-item">
-            <main>
-                <section class="section-box">
-                    <h1 class="title">Left Sidebar</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore
-                        et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip
-                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.</p>
-                </section>
-            </main>
+            <div class="section-box">
+                <h1 class="title">Left Sidebar</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                    labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.</p>
+            </div>
         </div>
         <div class="main-column flex-item">
-            <main>
-                <section class="section-box">
-                    <h1 class="title">Main Column</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore
-                        et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip
-                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.</p>
-                </section>
-                <section class="section-box">
-                    <h1 class="title">Title</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore
-                        et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip
-                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.</p>
-                </section>
-                <section class="section-box">
-                    <h1 class="title">Title</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore
-                        et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip
-                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.</p>
-                </section>
-            </main>
+            <div class="section-box">
+                <h1 class="title">Main Column</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                    labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="section-box">
+                <h1 class="title">Title</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                    labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="section-box">
+                <h1 class="title">Title</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                    labore
+                    et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.</p>
+            </div>
         </div>
         <div class="right-sidebar flex-item">
-            <main>
-                <section class="section-box">
-                    <h1 class="title">Right Sidebar</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-                        labore
-                        et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip
-                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum.</p>
-                </section>
-            </main>
+
+            <div class="section-box">
+                <h1 class="title">Right Sidebar</h1>
+                <h2>Content:</h2>
+                <p>1. List</p>
+                <p>2. List</p>
+                <p>3. List</p>
+                <p>4. List</p>
+                <p>5. List</p>
+
+            </div>
         </div>
     </div>
+    <footer>The End.</footer>
     <script></script>
 </body>
 
