@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Website Design</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
@@ -17,44 +17,46 @@
         }
 
         body {
-            /* font-family: Arial, sans-serif; */
             font-family: "EB Garamond", serif;
             font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
-
             background-color: #f4f4f4;
         }
 
         header {
-            background-color: #4CAF50;
+            /* background-color: #4CAF50; */
+            background-color: #134B70;
             color: white;
-            /* padding: 20px; */
             width: 100%;
             text-align: center;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
             padding: 20px 0px;
         }
 
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+
         .main-column {
             display: flex;
             flex-direction: column;
             align-items: center;
-
-            width: 50vw;
-            padding: 0 30px;
+            /* padding: 0 30px; */
+            /* flex-grow: 2; */
+            /* Ocupa el doble que las barras laterales */
         }
 
         section {
             margin: 30px 0;
         }
 
-        .main-section {
+        .section-box {
             background-color: white;
             padding: 20px 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-
             width: 100%;
         }
 
@@ -62,9 +64,32 @@
             font-size: 2em;
         }
 
-        .main-section p {
+        .section-box p {
             font-size: 1.2em;
             margin: 10px 0px;
+        }
+
+        .left-sidebar,
+        .right-sidebar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 0 30px;
+            /* flex-grow: 1; */
+            /* Las barras laterales ocupan el mismo espacio */
+        }
+
+        .container:nth-of-type(1) {
+            flex-grow: 1;
+        }
+
+        .container:nth-of-type(2) {
+            flex-grow: 2;
+        }
+
+        .container:nth-of-type(3) {
+            flex-grow: 1;
         }
     </style>
 </head>
@@ -73,45 +98,80 @@
     <header>
         <h1>Header</h1>
     </header>
-
-    <div class="main-column">
-        <main>
-            <section class="main-section">
-                <h1 class="title">Title</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                    dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.</p>
-            </section>
-            <section class="main-section">
-                <h1 class="title">Title</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                    dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.</p>
-            </section>
-            <section class="main-section">
-                <h1 class="title">Title</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                    dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.</p>
-            </section>
-        </main>
+    <div class="container">
+        <div class="left-sidebar flex-item">
+            <main>
+                <section class="section-box">
+                    <h1 class="title">Left Sidebar</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore
+                        et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.</p>
+                </section>
+            </main>
+        </div>
+        <div class="main-column flex-item">
+            <main>
+                <section class="section-box">
+                    <h1 class="title">Main Column</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore
+                        et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.</p>
+                </section>
+                <section class="section-box">
+                    <h1 class="title">Title</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore
+                        et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.</p>
+                </section>
+                <section class="section-box">
+                    <h1 class="title">Title</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore
+                        et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.</p>
+                </section>
+            </main>
+        </div>
+        <div class="right-sidebar flex-item">
+            <main>
+                <section class="section-box">
+                    <h1 class="title">Right Sidebar</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore
+                        et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.</p>
+                </section>
+            </main>
+        </div>
     </div>
-
     <script></script>
 </body>
 
